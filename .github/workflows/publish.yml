@@ -69,27 +69,3 @@ jobs:
       - name: Publish to the package repository
         run: |
           pdm publish --repository https://test.pypi.org/legacy/
-
-  publish-documentation:
-    permissions:
-      contents: write
-    needs:
-      - "publish-package"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup PDM
-        uses: pdm-project/setup-pdm@d4d1a7759495bc23245b547ccc2f4d5b0cef4cee
-      - name: Setup nox
-        uses: wntrblm/nox@cf82e6da59346b6f2d5c0476760a2dc77261aced
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Fetch the gh-pages branch
-        run: |
-          git fetch origin gh-pages --depth=1 || true
-      - name: Publish the documentation for the new version
-        run: |
-          ref="${{ github.ref }}"
-          nox -s publish_docs -- ${ref:10:1000}

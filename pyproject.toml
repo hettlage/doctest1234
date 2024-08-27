@@ -25,7 +25,6 @@ distribution = true
 
 [tool.pdm.dev-dependencies]
 docs = [
-    "mike>=2.1.2",
     "mkdocs>=1.6.0",
     "mkdocstrings[python]>=0.25.2",
     "mkdocs-material>=9.5.30",
@@ -44,5 +43,4 @@ testcov = "pytest --cov=src --cov-report=html --cov-report=term"
 typecheck = "mypy src tests"
 lint = {composite = ["precommit", "typecheck"]}
 build_docs = "mkdocs build"
-publish_docs = "mike deploy -u --push"
-set_default_doc_label = "mike set-default --allow-undefined latest"
+publish_docs = "mkdocs gh-deploy --force"

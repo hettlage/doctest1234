@@ -90,12 +90,10 @@ However, contrary to `mkdocs serve`, this command does not let you preview the d
 
 There is a GitHub workflow (`publish.xml`) for deploying the package to a package repository (such as PyPI). This workflow assumes that the GitHub repository is a trusted publisher. Refer to the PyPI documentation on how to [create a PyPI project with a trusted publisher](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/).
 
-in addition, the workflow generates the documentation files and publishes them as a GitHub page (at [https://hettlage.github.io/doctest1234](https://hettlage.gitub.io/doctest1234)). The documentation is versioned ([using mike](https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/?h=versioning)) according to the package version.
+in addition, the workflow generates the documentation files and publishes them as a GitHub page (at [https://hettlage.github.io/doctest1234](https://hettlage.gitub.io/doctest1234)).
 
 To see the deployed documentation, you have to tweak some settings. Click on Settings in the top menu and then on Page in the sidebar menu. Choose to deploy from a branch, select gh-pages as the branch and / (root) as the folder, and click on the Save button.
 
 ![Settings for the GitHub pages](pages_settings.png)
 
 The workflow is triggered whenever a release is created for the GitHub repository. The tag for the release must be the package's version number preceded by a "v". For example, if the package version is `"1.4.2"`, the tag must be `"v1.4.2"`. The tag must be for the current commit in the main branch.
-
-You can go to [https://github.com/hettlage/doctest1234/deployments](https://github.com/hettlage/doctest1234/deployments) to check whether the documentation has been deployed. If the page does not exist, you might have forgotten to update the repository settings as described above.
