@@ -88,7 +88,7 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Fetch the gh-pages branch
         run: |
-          git fetch origin gh-pages --depth=1
+          git fetch origin gh-pages --depth=1 || true
       - name: Publish the documentation for the new version
         run: |
           ref="${{ github.ref }}"
