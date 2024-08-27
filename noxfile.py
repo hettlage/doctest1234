@@ -29,27 +29,8 @@ def build_docs(session):
 
 @nox.session
 def publish_docs(session):
-    # Get the version.
-    parser = argparse.ArgumentParser(description="Release a semver version.")
-    parser.add_argument(
-        "version",
-        type=str,
-        nargs=1,
-        help="The semver release to make. An initial \"v\" and a patch version will be ignored.",
-    )
-    args: argparse.Namespace = parser.parse_args(args=session.posargs)
-    version: str = args.version.pop()
-
-    # Create the correct version string.
-    if version.startswith("v"):
-        version = version[1:]
-    version_parts = version.split(".")
-    if len(version_parts) > 2:
-        version = version_parts[0] + "." + version_parts[1]
-
     session.run_install("pdm", "install", "-G", "docs", external=True)
-    session.run("pdm", "set_default_doc_label", external=True)
-    session.run("pdm", "publish_docs", "--push", version, external=True)
+    session.run("pdm", "publish_docs", external=True)
 
 
 @nox.session
