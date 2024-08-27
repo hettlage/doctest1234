@@ -97,3 +97,5 @@ To see the deployed documentation, you have to tweak some settings. Click on Set
 ![Settings for the GitHub pages](pages_settings.png)
 
 The workflow is triggered whenever a release is created for the GitHub repository. The tag for the release must be the package's version number preceded by a "v". For example, if the package version is `"1.4.2"`, the tag must be `"v1.4.2"`. The tag must be for the current commit in the main branch.
+
+You can go to [https://github.com/hettlage/doctest1234/deployments](https://github.com/hettlage/doctest1234/deployments) to check whether the documentation has been deployed. If the page does not exist, you might have forgotten to update the repository settings as described above.
