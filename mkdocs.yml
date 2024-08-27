@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: chdoctest20240826
+
+site_url: https://hettlage.github.io/doctest1234
+
+theme:
+  name: material
+  custom_dir: custom_docs_theme
+
+plugins:
+  - mkdocstrings
+
+extra:
+  version:
+    provider: mike
+    alias: true

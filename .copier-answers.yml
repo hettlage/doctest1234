@@ -1,0 +1,15 @@
+# Changes here will be overwritten by Copier
+_commit: 0.3.1-12-g396b6a1
+_src_path: /Users/christian/IdeaProjects/copier-python-package
+author: Christian Hettlage
+author_email: c.hettlage@saao.nrf.ac.za
+description: Testing
+github_repository_name: doctest1234
+github_repository_url: https://github.com/hettlage/doctest1234
+github_username: hettlage
+homepage: https://hettlage.github.io/doctest1234
+package_name: chdoctest20240826
+package_repository_url: https://test.pypi.org/legacy/
+required_python_version: '>=3.11'
+tested_python_versions: '3.11'
+version: 1.0.0
